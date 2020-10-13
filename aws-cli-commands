@@ -1,0 +1,46 @@
+..............:::::::-----To Install aws cli program on windows --------::::::::..........
+
+https://awscli.amazonaws.com/AWSCLIV2.msi
+
+..............:::::::-----To Install aws cli program on linux --------::::::::..........
+
+#curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip"
+
+#unzip awscliv2.zip
+
+#cd aws
+
+#sudo ./install
+
+..............:::::::-----To create key-pair --------::::::::..........
+
+#aws ec2 create-key-pair --key-name <key name>
+
+..............:::::::-----To create security-group --------::::::::..........
+
+#aws ec2 create-security-group --group-name <SG group name> --description <description>
+
+..............:::::::-----To Add Inbound rule --------::::::::..........
+
+
+#aws ec2 authorize-security-group-ingress  --group-name  <sg name> --protocol <protocol name> --port <port name>  --cidr <source>
+
+
+..............:::::::-----To launch the instance --------::::::::..........
+
+
+#aws ec2 run-instances --image-id    <image id> --instance-type    <type of instance> --count <count of instance> --subnet-id <id of the subnet> --security-group-ids <security group ids> --key-name <name of the key>
+
+..............:::::::-----To create the volume --------::::::::..........
+
+
+#aws ec2 create-volume --volume-type <volume type> --size <size in gb>  --availability-zone <zone name>
+
+..............:::::::-----To attach the volume to instance --------::::::::..........
+
+#aws ec2 attach-volume --volume-id <id of the volume> --instance-id <instance id> --device <device name>
+
+..............:::::::-----To detach the volume to instance --------::::::::..........
+
+#aws ec2 detach-volume --volume-id <id of the volume> --instance-id <instance id> --device <device name>
+
